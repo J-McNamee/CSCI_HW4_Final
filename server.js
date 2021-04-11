@@ -213,7 +213,6 @@ router.route('/movies')
                 }
 
             })
-            //return res.status(403).json({success: false, message: "Unable to find movie"});
         }
     }
     )
@@ -261,7 +260,6 @@ router.route('/reviews')
 
             var review = new Review();
 
-            //Retrieve the token from the authorization header
             jwt.verify(req.headers.authorization.substring(4), process.env.SECRET_KEY, function(err, usr_id){
                 if(err){
                     return res.status(403).json({success : false, message:  "Can not post review."});
